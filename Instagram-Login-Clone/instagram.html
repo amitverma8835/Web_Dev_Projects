@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        .container {
+            border: 2px solid rgb(88, 77, 88);
+            height: 440px;
+            width: 350px;
+            position: relative;
+            left: 440px;
+            top: 60px;
+
+        }
+
+        img {
+            width: 150px;
+            position: relative;
+            left: 100px;
+
+        }
+
+        .entry input {
+            height: 30px;
+            width: 260px;
+            margin-top: 5px;
+            border-radius: 4px;
+            background-color: rgb(236, 236, 236);
+        }
+
+        .entry {
+            position: relative;
+            left: 40px;
+        }
+
+        #btn {
+            background-color: #5aa7ff;
+            width: 270px;
+            height: 30px;
+            position: relative;
+            left: 39px;
+            top: 20px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        span {
+            display: block;
+            position: relative;
+            left: 90px;
+            top: 40px;
+        }
+
+        #facebook {
+            font-weight: bold;
+            color: rgb(43, 43, 141);
+            text-decoration: none;
+            position: relative;
+            top: 60px;
+            left: 100px;
+        }
+
+        #facebook i {
+            margin-right: 5px;
+        }
+
+        #forgot {
+            position: relative;
+            top: 90px;
+            right: 40px;
+            text-decoration: none;
+            color: rgba(57, 67, 67, 0.936);
+            font-size: 15px;
+        }
+
+        .container2 {
+            border: 2px solid rgb(88, 77, 88);
+            height: 80px;
+            width: 350px;
+            position: relative;
+            left: 440px;
+            top: 80px;
+        }
+
+        .container2 p {
+            position: relative;
+            top: 15px;
+            left: 70px;
+        }
+
+        .container2 p a {
+            font-weight: bold;
+            color: #2775cf;
+            text-decoration: none;
+
+        }
+
+        h1 {
+            font-weight: bold;
+            color: brown;
+            display: none;
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: brown;
+            display: none;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Dekh rha hai binod kese kese logic laga rha hai</h1>
+    <h2>wrong password or username</h2>
+
+    <div class="container" id="container">
+        <img src="Instagram-name-logo-transparent-PNG.png" alt="">
+
+        <div class="entry">
+            <input class="number" id="number" type="text" name="" id="" placeholder="Phone number, username, or email">
+            <input id="pass" type="text" name="" id="" placeholder="Password">
+        </div>
+
+        <button id="btn">
+            Log in
+        </button>
+
+        <span>
+            ------------- OR --------------
+        </span>
+
+        <a id="facebook" href="http://www.facebook.com" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-square-facebook"></i>Log in with facebook</a>
+        <a id="forgot" href="http://" target="_blank" rel="noopener noreferrer">Forgot Password?</a>
+
+    </div>
+
+    <div class="container2" id="container2">
+        <p>Don't have an account? <a href="www.signup.com">Sign up</a></p>
+    </div>
+
+
+
+    <script>
+
+        let email = document.getElementById("number");
+        let pass = document.getElementById("pass");
+        let btn = document.getElementById("btn");
+
+        let emailValue = email.value
+        let passValue = pass.value
+
+
+        let userNameDatabase = ["amikv93047@gmail.com", "amitvermaa___", "the_sachin", "8709378743", "9934308056"]
+        let passWord = ["629165", "993455", "957205"]
+
+        btn.onclick = function checkData() {
+
+            for (let index = 0; index < userNameDatabase.length; index++) {
+
+                if (userNameDatabase[index] == emailValue) {
+                    for (let index = 0; index < passWord.length; index++) {
+                        if (passWord[index] == passValue) {
+                            document.getElementById("container").style.display = "none"
+                            document.getElementById("container2").style.display = "none"
+                            document.querySelector("h1").style.display = "block"
+                        }
+                    }
+
+                }
+                else {
+                    document.getElementById("container").style.display = "none"
+                    document.getElementById("container2").style.display = "none"
+                    document.querySelector("h2").style.display = "block"
+
+                }
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
+
