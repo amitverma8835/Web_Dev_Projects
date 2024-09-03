@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            text-align: center;
+            color: brown;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .button1 {
+            background-color: chartreuse;
+            height: 40px;
+            width: 100px;
+            border-radius: 10px;
+            font-weight: bold;
+
+        }
+
+        .button2 {
+            background-color: chartreuse;
+            height: 40px;
+            width: 100px;
+            border-radius: 10px;
+            font-weight: bold;
+        
+        }
+
+        .button1:hover{
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+            background-color: blue;
+            color: black;
+            font-style: italic;
+        }
+
+        .button2:hover{
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+            background-color: blue;
+            color: black;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Hello World 
+    </h1>
+
+    <button class="button1" id="btn1">
+        Delete it
+    </button>
+    <button class="button2" id="btn2">
+        Restore it
+    </button>
+
+    <script>
+        const btn1 = document.getElementById("btn1")
+        const btn2 = document.getElementById("btn2")
+        btn2.style.display = "none"
+
+        btn1.addEventListener("click", () => {
+            document.querySelector("h1").innerText = ""
+            btn2.style.display = "inline-block";
+            btn1.style.display = "none"
+        })
+
+        btn2.addEventListener("click", () => {
+            document.querySelector("h1").innerText = "Hello World "
+            btn2.style.display = "none"
+            btn1.style.display = "inline-block"
+        })
+    </script>
+</body>
+
+</html>
+
